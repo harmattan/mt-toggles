@@ -1,0 +1,52 @@
+Source: mt-toggles
+Section: user/other
+Priority: optional
+Maintainer: Mohammad Abu-Garbeyyeh <mohammad@unknown>
+Build-Depends: debhelper (>= 5), libqt4-dev
+Standards-Version: 3.7.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: mt-toggles
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MT Toggles are status menu toggles
+ MT Toggles is a two part toggle system, the first
+ part is the status menu plugin that shows toggles.
+ The second is a header package that can be used
+ to add more toggles by devs.
+XSBC-Maemo-Display-Name: MT-Toggles
+
+Package: libmt-toggles-dev
+Section: dev
+Architecture: all
+Priority: optional
+Depends: mt-toggles
+Description: Headers for MT-Toggles
+
+Package: flightmode-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Flight mode toggle for MT-Toggles
+
+Package: bluetooth-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Bluetooth toggle for MT-Toggles
+
+Package: psm-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Power Saving Mode toggle for MT-Toggles
+
+Package: flashlight-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Flashlight toggle for MT-Toggles
