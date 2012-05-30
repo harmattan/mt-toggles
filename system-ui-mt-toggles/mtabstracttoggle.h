@@ -32,12 +32,13 @@ public:
 
     /* toggleIcon() should return the icon to be shown in the toggle's widget,
      * in case this icon needs to be dynamic, it can be changed by emitting
-     * iconChanged(QImage icon) */
+     * iconChanged(QImage icon). */
     virtual QImage toggleIcon() = 0;
 
     /* toggleIconId() should return the ID of the image to be used in case
      * the method toggleIcon() returns a null image, if both this and the above
-     * are null, the plugin will not be loaded */
+     * are null, the plugin will not be loaded. It can similarly be changed
+     * by emitting iconChanged(QString iconId). */
     virtual QString toggleIconId() = 0;
 
     /* Due to limitations in Qt's Plugin interface, I can't provide virtual slots
@@ -47,8 +48,8 @@ signals:
     void stateChanged(bool state);
     void isWorkingStateChanged(bool working);
 
-    // Define both signals, you can use only one depending on what method you used
-    //  to provide the icon
+    // Define both signals, you can use only one if you want depending on what
+    // method you used to provide the icon.
     void iconChanged(QImage icon);
     void iconChanged(QString iconId);
 
