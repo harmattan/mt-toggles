@@ -30,4 +30,8 @@ target.path = /usr/lib/meegotouch/applicationextensions
 desktop.files = statusindicatormenu-mt-toggles.desktop
 desktop.path = /usr/share/meegotouch/applicationextensions
 
-INSTALLS += target desktop
+switches.files += on_switch.png
+switches.files += off_switch.png
+switches.path = /usr/share/mt-toggles
+
+INSTALLS += switches target desktop
