@@ -1,3 +1,10 @@
+mt-toggles (0.2) unstable; urgency=low
+
+  * Fixed possible segfault.
+  * Aligned first icon with rest of icons.
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Tue, 17 Jul 2012 16:53:34 +0300
+
 mt-toggles (0.0.1) unstable; urgency=low
 
   * Initial Release.

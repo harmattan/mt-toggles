@@ -2,7 +2,8 @@
 
 BluetoothToggle::BluetoothToggle(QObject *parent) :
     QObject(parent),
-    m_btLocalDevice(new QBluetoothLocalDevice(this))
+    m_btLocalDevice(new QBluetoothLocalDevice(this)),
+    m_isActive(false)
 {
     connect(m_btLocalDevice, SIGNAL(hostModeStateChanged(QBluetoothLocalDevice::HostMode)),
             this, SLOT(onBluetoothStateChanged(QBluetoothLocalDevice::HostMode)));
