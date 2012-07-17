@@ -17,7 +17,7 @@ class BluetoothToggle : public QObject, public MTAbstractToggle
 
 public:
     BluetoothToggle(QObject *parent = NULL);
-    QString toggleName() { return "Flight Toggle"; }
+    QString toggleName() { return "Bluetooth Toggle"; }
     QString toggleDeveloper() { return "Mohammad Abu-Garbeyyeh"; }
     QUrl toggleSupportUrl() { return QUrl("mailto:mohammad7410@gmail.com"); }
     QImage toggleIcon() { return QImage(); }
