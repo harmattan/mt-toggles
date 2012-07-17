@@ -6,12 +6,14 @@ MTTogglesController::MTTogglesController(MTTogglesPlugin *plugin, QGraphicsItem 
 {
     Q_UNUSED(plugin)
 
-    MPannableWidget *widget = new MPannableWidget(this);
-    widget->setHorizontalPanningPolicy(MPannableWidget::PanningAlwaysOn);
-    widget->setVerticalPanningPolicy(MPannableWidget::PanningAlwaysOff);
+    QGraphicsWidget *widget = new QGraphicsWidget(this);
+
+    MPannableViewport *viewPort = new MPannableViewport(this);
+    viewPort->setHorizontalPanningPolicy(MPannableViewport::PanningAlwaysOn);
+    viewPort->setWidget(widget);
 
     QGraphicsLinearLayout *layout = new QGraphicsLinearLayout(Qt::Vertical, this);
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins(7, 0, 0, 0);
     layout->addItem(widget);
 
     m_mainLayout = new QGraphicsLinearLayout(Qt::Horizontal, widget);
