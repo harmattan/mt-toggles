@@ -17,11 +17,4 @@ HEADERS += bluetoothtoggle.h
 CONFIG += mobility
 MOBILITY += connectivity
 
-unix:!symbian {
-    maemo5 {
-        target.path = /opt/usr/lib
-    } else {
-        target.path = /usr/lib
-    }
-    INSTALLS += target
-}
+target.path = /usr/lib/mt-toggles
