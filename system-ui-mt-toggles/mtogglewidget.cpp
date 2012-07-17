@@ -2,7 +2,7 @@
 
 MToggleWidget::MToggleWidget(QGraphicsItem *parent, QImage icon, QString iconId, bool isToggle) :
     MWidget(parent),
-    m_stateImage(0)
+    m_stateImage(NULL)
 {
     QGraphicsLinearLayout *layout = new QGraphicsLinearLayout(Qt::Vertical, this);
     MFeedback* feedback = new MFeedback(FEEDBACK_PATTERN, this);
@@ -32,16 +32,6 @@ MToggleWidget::MToggleWidget(QGraphicsItem *parent, QImage icon, QString iconId,
     layout->setSpacing(0.1);
 
     if (isToggle) {
-        /*
-        m_label = new MLabel(this);
-        m_label->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-        QFont font = m_label->font();
-        font.setPointSize(10);
-        m_label->setFont(font);
-        layout->addItem(m_label);
-        layout->setAlignment(m_label, Qt::AlignHCenter);
-        */
-
         m_stateImage = new MImageWidget(this);
         m_stateImage->setMinimumSize(60, 20);
         m_stateImage->setMaximumSize(60, 20);
@@ -56,6 +46,9 @@ MToggleWidget::MToggleWidget(QGraphicsItem *parent, QImage icon, QString iconId,
 
 void MToggleWidget::onStateChanged(bool state)
 {
+    if (m_stateImage == NULL)
+        return;
+
     if (state)
         m_stateImage->setImage(QImage(ON_SWITCH));
     else
