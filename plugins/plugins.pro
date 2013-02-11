@@ -4,4 +4,5 @@ SUBDIRS += \
     flight-toggle \
     bluetooth-toggle \
     psm-toggle \
-    flashlight-toggle
+    flashlight-toggle \
+    reboot
