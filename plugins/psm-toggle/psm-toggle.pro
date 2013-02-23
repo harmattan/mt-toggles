@@ -12,5 +12,7 @@ SOURCES += psmtoggle.cpp
 
 HEADERS += psmtoggle.h
 
+RESOURCES += psmtoggle.qrc
+
 target.path = /usr/lib/mt-toggles
 
