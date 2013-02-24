@@ -5,4 +5,5 @@ SUBDIRS += \
     bluetooth-toggle \
     psm-toggle \
     flashlight-toggle \
-    blankscreen-toggle
+    blankscreen-toggle \
+    dual3g2g-toggle

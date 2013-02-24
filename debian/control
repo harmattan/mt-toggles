@@ -57,3 +57,10 @@ Architecture: any
 Priority: optional
 Depends: mt-toggles
 Description: BlankScreen toggle for MT-Toggles
+
+Package: dual3g2g-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Dual-3G-2G mode switcher toggle for MT-Toggles

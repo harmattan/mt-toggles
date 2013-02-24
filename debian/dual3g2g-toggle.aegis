@@ -1,0 +1,6 @@
+<aegis>
+	<request policy="add">
+		<credential name="Cellular" />
+		<for path="system-ui::/usr/bin/sysuid" />
+	</request>
+</aegis>
