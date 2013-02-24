@@ -50,3 +50,10 @@ Architecture: any
 Priority: optional
 Depends: mt-toggles
 Description: Flashlight toggle for MT-Toggles
+
+Package: blankscreen-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: BlankScreen toggle for MT-Toggles
