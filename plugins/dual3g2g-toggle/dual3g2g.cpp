@@ -66,9 +66,6 @@ void Dual3G2GToggle::onToggleClicked()
     }
 
     m_radioAccess->setMode(m);
-
-    emit stateChanged(activeForMode(m));
-    emit iconChanged(iconForMode(m));
 }
 
 void Dual3G2GToggle::onModeChanged(int i)
