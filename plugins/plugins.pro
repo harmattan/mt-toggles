@@ -6,4 +6,5 @@ SUBDIRS += \
     psm-toggle \
     flashlight-toggle \
     blankscreen-toggle \
-    dual3g2g-toggle
+    dual3g2g-toggle \
+    nfc-toggle
