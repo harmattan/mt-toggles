@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>poweron-auto.png</file>
+        <file>psm-auto.png</file>
+    </qresource>
+</RCC>

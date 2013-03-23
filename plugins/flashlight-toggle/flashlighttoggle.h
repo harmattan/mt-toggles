@@ -6,8 +6,8 @@
 #include <gst/gst.h>
 #include <gst/gstelement.h>
 
-#define INACTIVE_ICON "icon-m-camera-flash-always"
-#define ACTIVE_ICON "icon-m-camera-flash-always-selected"
+#define INACTIVE_ICON "icon-m-camera-torch-off"
+#define ACTIVE_ICON "icon-m-camera-torch-on"
 
 class FlashlightToggle : public QObject, public MTAbstractToggle
 {

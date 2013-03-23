@@ -18,18 +18,20 @@ public:
     QString toggleName() { return "Power Saving Mode Toggle"; }
     QString toggleDeveloper() { return "Mohammad Abu-Garbeyyeh"; }
     QUrl toggleSupportUrl() { return QUrl("mailto:mohammad7410@gmail.com"); }
-    QImage toggleIcon() { return QImage(); }
-    QString toggleIconId() { return "icon-m-energy-management-powersave8"; }
+
+    QImage toggleIcon();
+    QString toggleIconId();
 
     bool isActive();
 
 private:
     MeeGo::QmDeviceMode *m_deviceMode;
 
-    bool m_isActive;
     bool m_isWorking;
+    int m_psmAutoPercent;
 
     bool getIsPSMModeFromPSMState(MeeGo::QmDeviceMode::PSMState state);
+    void setIcon(bool isPSM, bool isAuto);
 
 public slots:
     void onToggleClicked();

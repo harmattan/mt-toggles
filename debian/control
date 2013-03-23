@@ -50,3 +50,24 @@ Architecture: any
 Priority: optional
 Depends: mt-toggles
 Description: Flashlight toggle for MT-Toggles
+
+Package: blankscreen-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: BlankScreen toggle for MT-Toggles
+
+Package: dual3g2g-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Dual-3G-2G mode switcher toggle for MT-Toggles
+
+Package: nfc-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: NFC toggle for MT-Toggles

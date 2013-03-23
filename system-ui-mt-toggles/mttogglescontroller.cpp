@@ -13,7 +13,6 @@ MTTogglesController::MTTogglesController(MTTogglesPlugin *plugin, QGraphicsItem 
     viewPort->setWidget(widget);
 
     QGraphicsLinearLayout *layout = new QGraphicsLinearLayout(Qt::Vertical, this);
-    layout->setContentsMargins(7, 0, 0, 0);
     layout->addItem(widget);
 
     m_mainLayout = new QGraphicsLinearLayout(Qt::Horizontal, widget);
