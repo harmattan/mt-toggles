@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT        += gui
+QT        += gui dbus
 
 TARGET = flight-toggle
 TEMPLATE = lib

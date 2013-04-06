@@ -1,0 +1,4 @@
+plugins/nfc-toggle/libnfc-toggle.so	usr/lib/mt-toggles
+plugins/nfc-toggle/icon-m-nfc-off.png	usr/share/mt-toggles/nfc-toggle
+plugins/nfc-toggle/icon-m-nfc-on.png	usr/share/mt-toggles/nfc-toggle
+

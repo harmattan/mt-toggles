@@ -38,9 +38,9 @@ void BluetoothToggle::onBluetoothStateChanged(QBluetoothLocalDevice::HostMode mo
     emit stateChanged(m_isActive);
 
     if (m_isActive)
-        emit iconChanged(ACTIVE_ICON);
+        emit iconChanged(QImage(ACTIVE_ICON));
     else
-        emit iconChanged(INACTIVE_ICON);
+        emit iconChanged(QImage(INACTIVE_ICON));
 }
 
 void BluetoothToggle::onToggleClicked()
@@ -49,6 +49,28 @@ void BluetoothToggle::onToggleClicked()
         m_btLocalDevice->setHostMode(QBluetoothLocalDevice::HostPoweredOff);
     else
         m_btLocalDevice->setHostMode(QBluetoothLocalDevice::HostDiscoverable);
+}
+
+void BluetoothToggle::onToggleLongPressed()
+{
+    QDBusMessage message = QDBusMessage::createMethodCall("com.nokia.DuiControlPanel", "/",
+                                                          "com.nokia.DuiControlPanelIf", "appletPage");
+    QList<QVariant> args;
+    args.append(QVariant("Bluetooth"));
+    message.setArguments(args);
+
+    QDBusConnection bus = QDBusConnection::sessionBus();
+
+    if (bus.isConnected())
+        bus.send(message);
+}
+
+QImage BluetoothToggle::toggleIcon()
+{
+    if (m_isActive)
+        return QImage(ACTIVE_ICON);
+    else
+        return QImage(INACTIVE_ICON);
 }
 
 Q_EXPORT_PLUGIN2(bluetoothtoggle, BluetoothToggle)

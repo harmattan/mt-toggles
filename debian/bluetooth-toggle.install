@@ -1,1 +1,4 @@
 plugins/bluetooth-toggle/libbluetooth-toggle.so		usr/lib/mt-toggles
+plugins/bluetooth-toggle/icon-m-bluetooth-off.png	usr/share/mt-toggles/bluetooth-toggle
+plugins/bluetooth-toggle/icon-m-bluetooth-on.png	usr/share/mt-toggles/bluetooth-toggle
+

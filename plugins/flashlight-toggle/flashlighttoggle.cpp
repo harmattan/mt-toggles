@@ -37,9 +37,9 @@ void FlashlightToggle::setFlashActive(bool active)
     emit stateChanged(m_isActive);
 
     if (m_isActive)
-        emit iconChanged(ACTIVE_ICON);
+        emit iconChanged(QImage(ACTIVE_ICON));
     else
-        emit iconChanged(INACTIVE_ICON);
+        emit iconChanged(QImage(INACTIVE_ICON));
 }
 
 Q_EXPORT_PLUGIN2(flashlighttoggle, FlashlightToggle)

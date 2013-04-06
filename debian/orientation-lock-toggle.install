@@ -1,0 +1,7 @@
+plugins/orientation-lock-toggle/liborientation-lock-toggle.so		usr/lib/mt-toggles
+plugins/orientation-lock-toggle/icons/*					usr/share/orientation-lock-toggle
+plugins/orientation-lock-toggle/com.mohammadag.glol.context		usr/share/contextkit/providers
+plugins/orientation-lock-toggle/icons/icon-m-orientation-landscape.png	usr/share/mt-toggles/orientation-lock-toggle
+plugins/orientation-lock-toggle/icons/icon-m-orientation-portrait.png	usr/share/mt-toggles/orientation-lock-toggle
+plugins/orientation-lock-toggle/icons/icon-m-orientation-auto.png	usr/share/mt-toggles/orientation-lock-toggle
+

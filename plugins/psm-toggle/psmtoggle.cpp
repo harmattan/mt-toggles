@@ -3,6 +3,7 @@
 PSMToggle::PSMToggle(QObject *parent) :
     QObject(parent),
     m_deviceMode(new MeeGo::QmDeviceMode(this)),
+    m_deviceBattery(new MeeGo::QmBattery(this)),
     m_isWorking(false)
 {
     connect(m_deviceMode, SIGNAL(devicePSMStateChanged(MeeGo::QmDeviceMode::PSMState)),
@@ -35,6 +36,17 @@ bool PSMToggle::isActive()
 
 void PSMToggle::onToggleClicked()
 {
+    MeeGo::QmBattery::ChargingState chargingState = m_deviceBattery->getChargingState();
+
+    if (chargingState == MeeGo::QmBattery::StateCharging) {
+        MBanner *banner = new MBanner();
+        banner->setStyleName(MBannerType::InformationBanner);
+        banner->setTitle(tr("Power saving mode is disabled while charging"));
+        banner->appear(MSceneWindow::DestroyWhenDone);
+
+        return;
+    }
+
     m_isWorking = true;
     emit isWorkingStateChanged(m_isWorking);
 
@@ -47,11 +59,34 @@ void PSMToggle::onToggleClicked()
     emit isWorkingStateChanged(m_isWorking);
 }
 
+QImage PSMToggle::toggleIcon()
+{
+    if (isActive())
+        return QImage(ACTIVE_ICON);
+    else
+        return QImage(INACTIVE_ICON);
+}
+
 void PSMToggle::onPSMStateChanged(MeeGo::QmDeviceMode::PSMState state)
 {
     bool isPSMMode = getIsPSMModeFromPSMState(state);
     m_isActive = isPSMMode;
     emit stateChanged(m_isActive);
+    emit iconChanged(toggleIcon());
+}
+
+void PSMToggle::onToggleLongPressed()
+{
+    QDBusMessage message = QDBusMessage::createMethodCall("com.nokia.DuiControlPanel", "/",
+                                                          "com.nokia.DuiControlPanelIf", "appletPage");
+    QList<QVariant> args;
+    args.append(QVariant("Battery"));
+    message.setArguments(args);
+
+    QDBusConnection bus = QDBusConnection::sessionBus();
+
+    if (bus.isConnected())
+        bus.send(message);
 }
 
 Q_EXPORT_PLUGIN2(psmtoggle, PSMToggle)

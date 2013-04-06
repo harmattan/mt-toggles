@@ -20,6 +20,7 @@ bool FlightToggle::getIsFlightModeFromDeviceMode(MeeGo::QmDeviceMode::DeviceMode
         isFlightMode = true;
         break;
     case MeeGo::QmDeviceMode::Error:
+    default:
         isFlightMode = false;
         break;
     }
@@ -60,11 +61,35 @@ void FlightToggle::onToggleClicked()
     emit isWorkingStateChanged(m_isWorking);
 }
 
+void FlightToggle::onToggleLongPressed()
+{
+    QDBusMessage message = QDBusMessage::createMethodCall("com.nokia.DuiControlPanel", "/",
+                                                          "com.nokia.DuiControlPanelIf", "appletPage");
+    QList<QVariant> args;
+    args.append(QVariant("Phone network"));
+    message.setArguments(args);
+
+    QDBusConnection bus = QDBusConnection::sessionBus();
+
+    if (bus.isConnected())
+        bus.send(message);
+}
+
 void FlightToggle::onDeviceModeChanged(MeeGo::QmDeviceMode::DeviceMode mode)
 {
     bool isFlightMode = getIsFlightModeFromDeviceMode(mode);
     m_isActive = isFlightMode;
     emit stateChanged(m_isActive);
+    emit iconChanged(toggleIcon());
+}
+
+QImage FlightToggle::toggleIcon()
+{
+    if (isActive()) {
+        return QImage(ACTIVE_ICON);
+    } else {
+        return QImage(INACTIVE_ICON);
+    }
 }
 
 Q_EXPORT_PLUGIN2(flighttoggle, FlightToggle)

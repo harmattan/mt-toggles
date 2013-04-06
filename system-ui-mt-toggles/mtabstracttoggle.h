@@ -53,8 +53,15 @@ signals:
     void iconChanged(QImage icon);
     void iconChanged(QString iconId);
 
+    // Optional signal, emitting it will hide the status menu:
+    void hideStatusMenu();
+
 public slots:
+    // This is called when the toggle's widget is clicked
     void onToggleClicked();
+
+    // This is called when the toggle's widget is held down
+    void onToggleLongPressed();
     */
 };
 

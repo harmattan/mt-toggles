@@ -1,1 +1,4 @@
-plugins/flight-toggle/libflight-toggle.so	usr/lib/mt-toggles
+plugins/flight-toggle/libflight-toggle.so		usr/lib/mt-toggles
+plugins/flight-toggle/icon-m-flightmode-off.png		usr/share/mt-toggles/flight-toggle
+plugins/flight-toggle/icon-m-flightmode-on.png		usr/share/mt-toggles/flight-toggle
+

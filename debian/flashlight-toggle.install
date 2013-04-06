@@ -1,1 +1,5 @@
 plugins/flashlight-toggle/libflashlight-toggle.so	usr/lib/mt-toggles
+plugins/flashlight-toggle/icon-m-flashlight-on.png	usr/share/mt-toggles/flashlight-toggle
+plugins/flashlight-toggle/icon-m-flashlight-lock.png	usr/share/mt-toggles/flashlight-toggle
+plugins/flashlight-toggle/icon-m-flashlight-off.png	usr/share/mt-toggles/flashlight-toggle
+

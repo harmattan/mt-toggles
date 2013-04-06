@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<provider
+  xmlns="http://contextkit.freedesktop.org/Provider"
+  bus="session" service="com.mohammadag.glol">
+	<key name="Screen.TopEdge"/>
+</provider>

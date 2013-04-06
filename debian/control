@@ -9,6 +9,7 @@ Homepage: <insert the upstream URL, if relevant>
 Package: mt-toggles
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: cellular-toggle (= 0.0.1)
 Description: MT Toggles are status menu toggles
  MT Toggles is a two part toggle system, the first
  part is the status menu plugin that shows toggles.
@@ -50,3 +51,24 @@ Architecture: any
 Priority: optional
 Depends: mt-toggles
 Description: Flashlight toggle for MT-Toggles
+
+Package: orientation-lock-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles
+Description: Orientation lock toggle for MT-Toggles
+
+Package: nfc-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles, mce
+Description: NFC toggle for MT-Toggles
+
+Package: wifi-toggle
+Section: user/other
+Architecture: any
+Priority: optional
+Depends: mt-toggles, mce
+Description: WiFi toggle for MT-Toggles

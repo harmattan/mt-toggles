@@ -60,6 +60,9 @@ binary-arch: build install
 	dh_installdocs
 	dh_installexamples
 	dh_install
+#	Not sure why this happens tbh... don't have time to look at it atm
+	rm -rf debian/mt-toggles/usr/share/contextkit
+	rm -rf debian/mt-toggles/usr/lib/mt-toggles/liborientation-lock-toggle.so
 #	dh_installmenu
 #	dh_installdebconf	
 #	dh_installlogrotate

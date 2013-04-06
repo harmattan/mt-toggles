@@ -1,9 +1,42 @@
+mt-toggles (0.4.1) unstable; urgency=low
+
+  * Added new icons for PSM toggle.
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Sat, 06 Apr 2013 15:40:08 +0300
+
+mt-toggles (0.4) unstable; urgency=low
+
+  * New NFC Toggle.
+  * New Wi-Fi Toggle.
+  * Long pressing toggles now takes user to expected settings page.
+  * Toggles are now scrollable in case user has more than 5 installed.
+  * Toggles are now icon-only, thanks coderus!.
+  * Power saving mode toggle now explains why it doesn't do anything while charging.
+  * Toggles should now be correctly aligned regardless of top/bottom widget.
+  * Added Samsung-like animations when showing toggles (configurable).
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Sat, 06 Apr 2013 15:29:23 +0300
+
+mt-toggles (0.3-1) unstable; urgency=low
+
+  * Fixed press and hold
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Tue, 17 Jul 2012 19:05:21 +0300
+
+mt-toggles (0.3) unstable; urgency=low
+
+  * Add press and hold functionality
+  * Added conflict cellular-toggle v0.0.1
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Tue, 17 Jul 2012 18:42:32 +0300
+
 mt-toggles (0.2) unstable; urgency=low
 
   * Fixed possible segfault.
   * Aligned first icon with rest of icons.
+  * Possible fix for Bluetooth toggle (not working for some people)
 
- -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Tue, 17 Jul 2012 16:53:34 +0300
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Tue, 17 Jul 2012 16:55:26 +0300
 
 mt-toggles (0.0.1) unstable; urgency=low
 

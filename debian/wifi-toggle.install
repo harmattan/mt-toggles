@@ -1,0 +1,3 @@
+plugins/wifi-toggle/libwifi-toggle.so     usr/lib/mt-toggles
+plugins/wifi-toggle/icon-m-wlan-off.png	  usr/share/mt-toggles/wifi-toggle
+plugins/wifi-toggle/icon-m-wlan-on.png	  usr/share/mt-toggles/wifi-toggle

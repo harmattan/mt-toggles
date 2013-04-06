@@ -1,1 +1,4 @@
-plugins/psm-toggle/libpsm-toggle.so		/usr/lib/mt-toggles
+plugins/psm-toggle/libpsm-toggle.so		usr/lib/mt-toggles
+plugins/psm-toggle/icon-m-psm-off.png		usr/share/mt-toggles/psm-toggle
+plugins/psm-toggle/icon-m-psm-on.png		usr/share/mt-toggles/psm-toggle
+

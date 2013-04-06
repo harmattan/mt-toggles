@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       -= gui
+QT -= gui
+QT += dbus
 
 TARGET = bluetooth-toggle
 TEMPLATE = lib

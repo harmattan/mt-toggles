@@ -6,7 +6,13 @@
 #include <QImage>
 #include <QtPlugin>
 #include <QDebug>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <qmsystem2/qmdevicemode.h>
+
+#define ICON_DIR "/usr/share/mt-toggles/flight-toggle/"
+#define ACTIVE_ICON ICON_DIR "icon-m-flightmode-on.png"
+#define INACTIVE_ICON ICON_DIR "icon-m-flightmode-off.png"
 
 class FlightToggle : public QObject, public MTAbstractToggle
 {
@@ -15,14 +21,14 @@ class FlightToggle : public QObject, public MTAbstractToggle
 
 public:
     FlightToggle(QObject *parent = NULL);
-    bool isToggle() { return true; }
+    bool isToggle() { return false; }
     bool isWorking() { return m_isWorking; }
 
     QString toggleName() { return "Flight Toggle"; }
     QString toggleDeveloper() { return "Mohammad Abu-Garbeyyeh"; }
     QUrl toggleSupportUrl() { return QUrl("mailto:mohammad7410@gmail.com"); }
-    QImage toggleIcon() { return QImage(); }
-    QString toggleIconId() { return "icon-m-status-menu-flight-mode"; }
+    QImage toggleIcon();
+    QString toggleIconId() { return QString(); }
 
     bool isActive();
 
@@ -36,12 +42,14 @@ private:
 
 public slots:
     void onToggleClicked();
+    void onToggleLongPressed();
 
 signals:
     void stateChanged(bool state);
     void iconChanged(QImage icon);
     void iconChanged(QString iconId);
     void isWorkingStateChanged(bool working);
+    void hideStatusMenu();
 
 private slots:
     void onDeviceModeChanged(MeeGo::QmDeviceMode::DeviceMode mode);

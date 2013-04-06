@@ -6,8 +6,9 @@
 #include <gst/gst.h>
 #include <gst/gstelement.h>
 
-#define INACTIVE_ICON "icon-m-camera-flash-always"
-#define ACTIVE_ICON "icon-m-camera-flash-always-selected"
+#define ICON_DIR "/usr/share/mt-toggles/flashlight-toggle/"
+#define ACTIVE_ICON ICON_DIR "icon-m-flashlight-on.png"
+#define INACTIVE_ICON ICON_DIR "icon-m-flashlight-off.png"
 
 class FlashlightToggle : public QObject, public MTAbstractToggle
 {
@@ -19,10 +20,10 @@ public:
     QString toggleName() { return "Flashlight Toggle"; }
     QString toggleDeveloper() { return "Mohammad Abu-Garbeyyeh"; }
     QUrl toggleSupportUrl() { return QUrl("mailto:mohammad7410@gmail.com"); }
-    QImage toggleIcon() { return QImage(); }
-    QString toggleIconId() { return INACTIVE_ICON; }
+    QImage toggleIcon() { return QImage(INACTIVE_ICON); }
+    QString toggleIconId() { return QString(); }
     bool isActive() { return m_isActive; }
-    bool isToggle() { return true; }
+    bool isToggle() { return false; }
 
 private:
     GstElement *m_src;

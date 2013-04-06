@@ -3,10 +3,13 @@
 
 #include "../../system-ui-mt-toggles/mtabstracttoggle.h"
 #include <QBluetoothLocalDevice>
+#include <QDBusMessage>
+#include <QDBusConnection>
 #include <QtPlugin>
 
-#define ACTIVE_ICON "icon-m-bluetooth-active"
-#define INACTIVE_ICON "icon-m-bluetooth"
+#define ICON_DIR "/usr/share/mt-toggles/bluetooth-toggle/"
+#define ACTIVE_ICON ICON_DIR "icon-m-bluetooth-on.png"
+#define INACTIVE_ICON ICON_DIR "icon-m-bluetooth-off.png"
 
 using namespace QtMobility;
 
@@ -20,13 +23,14 @@ public:
     QString toggleName() { return "Bluetooth Toggle"; }
     QString toggleDeveloper() { return "Mohammad Abu-Garbeyyeh"; }
     QUrl toggleSupportUrl() { return QUrl("mailto:mohammad7410@gmail.com"); }
-    QImage toggleIcon() { return QImage(); }
-    QString toggleIconId() { return INACTIVE_ICON; }
+    QImage toggleIcon();
+    QString toggleIconId() { return QString(); }
     bool isActive() { return m_isActive; }
-    bool isToggle() { return true; }
+    bool isToggle() { return false; }
 
 public slots:
     void onToggleClicked();
+    void onToggleLongPressed();
 
 signals:
     void stateChanged(bool state);
